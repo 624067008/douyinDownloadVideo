@@ -38,10 +38,18 @@
     const getTime = () => {
       const comment = document.querySelector('.swiper-slide-active')?.querySelector('.comment-mainContent') || document.querySelector('.comment-mainContent')
 
+
       let time = comment?.querySelector('p')?.innerText || null
+
+      let time1 = getsliderVideo().querySelector('.video-create-time').innerText
+
+      if (time1.indexOf('月') != -1)
+        time = time1
 
       return time
     }
+
+
 
     // 打开评论区
     const openComment = () => {
